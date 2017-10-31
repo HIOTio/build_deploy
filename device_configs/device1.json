@@ -1,0 +1,72 @@
+{
+    "device": {
+        "hiotId": "ABCDEF1234567891",
+        "name": "Device 1",
+        "description": "Device 1",
+        "devicePath": "1/1/1/1/1/1/1/3/5/2"
+    },
+    "roleChannels": {
+        "broker": [
+            {
+                "_id": "59df282a3a092a2b805b6567",
+                "deployment": "597f3056ef66be0648ef5bd3",
+                "description": "Office B14 - Research Meeting Room 2 - HVAC and Lighting",
+                "name": "first broker",
+                "handler": "59bfda6ed7649a3070551ad9",
+                "active": true,
+                "__v": 0,
+                "myPaths": [
+                    {
+                        "in": "1/2/3/4/6/7/#",
+                        "out": "3/3/3/3/",
+                        "_id": "59df282a3a092a2b805b656a"
+                    },
+                    {
+                        "in": "1/2/3/4/6/8/#",
+                        "out": "3/3/3/4/",
+                        "_id": "59df282a3a092a2b805b6569"
+                    },
+                    {
+                        "in": "1/2/3/4/6/9/#",
+                        "out": "3/3/3/5/",
+                        "_id": "59df282a3a092a2b805b6568"
+                    }
+                ]
+            }
+        ],
+        "sensor": [
+            {
+                "_id": "59db98407e3a9fb060064ebf",
+                "id": "sn1234",
+                "name": "first real sensor",
+                "channel": "s/1/2/3/4/5/6/7/8/8/9/9/9/9",
+                "description": "some random sensor",
+                "handler": "59db908c327a46cb841ac004",
+                "poll": 60000,
+                "config": {
+                    "min": 1234,
+                    "range": 100
+                },
+                "location": "59bfd3ba9db46f37b858ed29",
+                "active": true,
+                "__v": 0
+            }
+        ]
+    },
+    "moscaEnabled": true,
+    "moscaPort": 3883,
+    "mqttServers": [
+        {
+            "mqttServerIP": "127.0.0.1",
+            "mqttServerPort": "2833",
+            "priority": 1,
+            "_id": "59df294d3a092a2b805b6570"
+        },
+        {
+            "mqttServerIP": "10.0.0.1",
+            "mqttServerPort": "1883",
+            "priority": 1,
+            "_id": "59df294d3a092a2b805b656f"
+        }
+    ]
+}

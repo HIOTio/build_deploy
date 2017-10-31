@@ -1,0 +1,31 @@
+{
+    "device": {
+        "hiotId": "ABCDEF1234567890",
+        "name": "coordinator device",
+        "description": "Deployment Coordinator",
+        "devicePath": "1/1/1/1/1/1/1/3/5/1"
+    },
+    "roleChannels": {
+ 
+        "coordinator": {
+            "m2mMqttport": 2833,
+            "m2mMqttServer": "localhost"
+        }
+    },
+    "moscaEnabled": true,
+    "moscaPort": 2883,
+    "mqttServers": [
+        {
+            "mqttServerIP": "127.0.0.1",
+            "mqttServerPort": "2833",
+            "priority": 1,
+            "_id": "59df294d3a092a2b805b6570"
+        },
+        {
+            "mqttServerIP": "10.0.0.1",
+            "mqttServerPort": "1883",
+            "priority": 1,
+            "_id": "59df294d3a092a2b805b656f"
+        }
+    ]
+}

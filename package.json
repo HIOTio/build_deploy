@@ -1,0 +1,26 @@
+{
+    "name": "build_deploy",
+    "version": "1.0.0",
+    "description": "This repo contains scripts to create a standalone, single machine deployment for testing and evaluation purpopses.",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "install_device": "n-clean device && git clone https://github.com/HIOTio/device.git && n-copy --source device --destination aggregator \"*\" && n-copy --source device --destination commander \"*\" && n-copy --source device --destination broker \"*\" && n-copy --source device --destination coordinator \"*\"",
+        "copy_config": "n-copy --source device_configs/aggregator/ --destination aggregator/ \"config.json\" && n-copy --source device_configs/broker/ --destination broker/ \"config.json\" && n-copy --source device_configs/commander/ --destination commander/ \"config.json\" && n-copy --source device_configs/coordinator/ --destination coordinator/ \"config.json\"",
+        "start_demo": "npm run install_device && npm run copy_config"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/HIOTio/build_deploy.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/HIOTio/build_deploy/issues"
+    },
+    "homepage": "https://github.com/HIOTio/build_deploy#readme",
+    "dependencies": {
+        "concurrently": "^3.5.1",
+        "npm-build-tools": "^2.2.5"
+    }
+}

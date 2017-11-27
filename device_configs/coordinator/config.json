@@ -1,0 +1,28 @@
+{
+    "device": {
+        "hiotId": "ABCDEF1234567890",
+        "name": "basic sensor/controller device",
+        "description": "This is the bottom level device",
+        "devicePath": "1/1/1/1/1/1/1/3/5/C"
+    },
+    "roleChannels": {
+
+        "coordinator": {
+            "m2mMqttport": 3880,
+            "m2mMqttServer": "localhost"
+        }
+    },
+    "moscaEnabled": true,
+    "moscaPort": 2880,
+    "mqttServers": [{
+        "mqttServerIP": "127.0.0.1",
+        "mqttServerPort": "2880",
+        "priority": 1,
+        "_id": "59df294d3a092a2b805b6570"
+    }, {
+        "mqttServerIP": "10.0.0.1",
+        "mqttServerPort": "1883",
+        "priority": 1,
+        "_id": "59df294d3a092a2b805b656f"
+    }]
+}

@@ -13,3 +13,15 @@ The following items are configured and run
 - Device 3 : Controller & sensor device: 2x Rand_sensor installed and 1 x demo controller installed
 - Device 4 : Aggregator and sensor: aggregator device for all sensors above, rand_sensor installed, but not aggregated anywhere (Aggregator MQTT on 4833)
 - Commander Device : commander installed to control all controllers above and display output from all sensors - all vai coordinator
+
+
+-- git clone device
+-- make 4 copies of device folder (device, broker, aggregator, commander, coordinator)
+-- copy config files from device_configs to each of the above folders
+-- start all 5 devices
+-- git clone coordinator_link
+-- start coordinator link
+-- git clone platform 
+-- start platform
+-- git clone ui
+-- start ui

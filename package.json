@@ -5,9 +5,13 @@
     "main": "index.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "install_device": "n-clean device && git clone https://github.com/HIOTio/device.git && n-copy --source device --destination aggregator \"*\" && n-copy --source device --destination commander \"*\" && n-copy --source device --destination broker \"*\" && n-copy --source device --destination coordinator \"*\"",
-        "copy_config": "n-copy --source device_configs/aggregator/ --destination aggregator/ \"config.json\" && n-copy --source device_configs/broker/ --destination broker/ \"config.json\" && n-copy --source device_configs/commander/ --destination commander/ \"config.json\" && n-copy --source device_configs/coordinator/ --destination coordinator/ \"config.json\"",
-        "start_demo": "npm run install_device && npm run copy_config"
+        "install_device": "n-clean deployment && git clone https://github.com/HIOTio/device.git deployment/device && n-copy --source deployment/device --destination deployment/aggregator \"*\" && n-copy --source deployment/device --destination deployment/commander \"*\" && n-copy --source deployment/device --destination deployment/broker \"*\" && n-copy --source deployment/device --destination deployment/coordinator \"*\"",
+        "copy_config": "n-copy --source device_configs/aggregator/ --destination deployment/aggregator/ \"config.json\" && n-copy --source device_configs/broker/ --destination deployment/broker/ \"config.json\" && n-copy --source device_configs/commander/ --destination deployment/commander/ \"config.json\" && n-copy --source device_configs/coordinator/ --destination deployment/coordinator/ \"config.json\" && n-copy --source device_configs/device/ --destination deployment/device/ \"config.json\"",
+        "install_deps": "cd deployment/device && npm install && cd ../aggregator && npm install && cd ../broker && npm install && cd ../commander && npm install && cd ../controller && npm install",
+        "run_all": "cd deployment/coordinator && nodemon && cd deployment/broker && nodemon && cd deployment/commander && nodemon && cd deployment/aggregator && nodemon && cd deployment/device && nodemon",
+        "clean_demo": "npm run install_device && npm run copy_config && npm run install_deps && npm run_all",
+        "install_demo": "npm run clean_demo",
+        "run_demo": "npm run run_all"
     },
     "repository": {
         "type": "git",
